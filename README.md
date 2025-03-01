@@ -1,130 +1,120 @@
-java c
-Module code and Title 
+java cModule code and Title 
 DTS304TC Machine Learning School Title 
 School of AI and Advanced Computing Assignment Title 
-Assessment Task 2 
+Assessment Task 1 
 DTS304TC Machine Learning 
-Coursework – Assessment Task 2
+Coursework – Assessment Task 1 
 Submission deadline: TBD
 Percentage in final mark: 50%
-Learning outcomes assessed: C, D
-●             Learning   outcome   C:   apply   ML   algorithms   for   specific problems.
-●             Learning   outcome   D:   Demonstrate   proficiency   in   identifying   and   customizing   aspects   on   ML   algorithms   to   meet particular   needs.
+Learning outcomes assessed: 
+A.   Demonstrate   a   solid   understanding   of   the   theoretical   issues   related   to   problems   that   machine   learning   algorithms   try   to   address.
+B.   Demonstrate   understanding   of   properties   of   existing   ML   algorithms   and   new   ones.
+C.   Apply   ML   algorithms   for   specific problems.
 Individual/Group: Individual
-Length: This   assessment   comprises   a   guided   coding   and   experimentation project,   along   with   an   associated research report.
-Late   policy: 5%   of   the   total   marks   available   for the   assessment   shall be   deducted   from   the   assessment
-mark   for   each   working   day   after   the   submission   date,   up   to   a   maximum   of   five   working   days
+Length: The   assessment   has   a   total   of   4   questions   which   gives   100   marks.   The   submitted   file   must   be   in   pdf   format.
+Late policy: 5%   of   the   total   marks   available   for the   assessment   shall be   deducted   from   the   assessment mark for each working day after the submission date, up to a maximum of five working days 
 Risks: 
-•      Please   read   the   coursework   instructions   and   requirements   carefully. Not   following   these   instructions   and   requirements   may   result   in   a   loss   of   marks.
+•      Please   read   the   coursework   instructions   and   requirements   carefully. Not   following   these   instructions   and   requirements   may result   in   loss   of   marks.
 •      The   formal   procedure   for   submitting   coursework   at   XJTLU   is   strictly   followed.   Submission   link   on   Learning   Mall   will   be provided   in   due   course.   The   submission   timestamp   on   Learning   Mall   will be      used   to   check   late   submission.
-Guided Project: Street-view Semantic Segmentation with U-Net 
-In this coursework,   you will explore street-view      semantic segmentation using a   U-Net   model across   multiple   challenging   scenarios.
-. Part   A focuses   on   evaluating   a   pretrained   daytime   segmentation   model.   You   will   write   your   own   evaluation script.    and   compute   metrics such as   Dice and accuracy. Then,   by   examining   both   successful    and    failed      segmentations,   you   will   highlight   the   difficulties of segmenting      diverse   daytime   scenes   and   discuss why   semantic   segmentation   can   be   challenging.
-. Part   B shifts   attention to   night-time   images.   You   will   evaluate   the   same   pretrained   model   on   night-   time data, then implement    fine-tuning    using   various   loss   functions   (e.g.,   Dice,   Cross-Entropy,   combinations of both, or other   losses   of interest).   In addition, you   will experiment   with one   additional    training    technique of your choice—such as different data augmentations, different   network   learning-rate   schedulers,   optimizers   (including   momentum   training),   or   layer-wise   fine-   tuning—and   compare the results,   explaining the   outcomes. You will   also discuss   from   a theoretical standpoint   why   combining   Dice   and   Cross-Entropy   losses   can   be   advantageous   and   illustrate   how   fine-tuning   improves performance   on   night-time   images.
-. Part C involves retraining   a U-Net   from   scratch   on   daytime   images, with   a   focus   on   small   or   distant   objects   (e.g.,   people   or   cars   far   away   in   the   scene).   You   are   encouraged   to   propose   and   implement   one or two strategies—such as incorporating object detection, targeted data augmentation,   different   loss    functions,    or   multi-scale architectures—to enhance segmentation performance    for   these      harder-to-segment classes. You will provide both quantitative metrics and qualitative   analyses   of   your results.
-. Part    D offers   an   opportunity   to   reflect   on   the   interesting   and   novel   aspects   of    the    work    you   developed   during   the   coursework,   the   principal   challenges   you   faced,   how   you   addressed   them,   and the lessons you    learned.   Your   coding   quality will   also   be   evaluated, so   focus   on   clarity,   organization, and efficiency. Completing this coursework will deepen your understanding of   semantic segmentation    metrics,    fine-tuning    techniques,    network   modifications   for   small   object   detection,   and the practical   challenges   of   deploying   segmentation models under varied   lighting   and   scene   conditions.
-
-The   assessment   comprises   two parts:
-1. Coding and experimentation 
-2. Completing the assessment work sheet 
-As   you   work   on   the   coding   and   experimentation,   it   is   crucial   to   record   and   document   all   relevant   findings;   these   will   be   integrated   into   your   assessment   sheet.
-Before   starting   this project, please   ensure   you   have   downloaded   the   pretrained   model,   the   assessment   codebase,   and   the   example   Jupyter   notebook.
-Notes: 
-1.          A   sufficiently powerful   GPU   is   required to   complete   this   coursework.   You   may   use   the   GPU
-machines   available   in   our   school   labs   (e.g.,   FYP   labs).   Please   schedule   and   coordinate usage   with   your   classmates   well   in   advance   to   avoid   conflicts.
-2.          You   are   strongly   encouraged   to   review   the provided   code   and training   notebook,   as   you   willrefer   to   and   modify   them   throughout   the   project.   Feel   free   to   use   code   covered   during   our   lab   sessions   or   other   online   resources.   However,   please   provide   proper   citations   and   links   to   any      external   resources   you use.
-Important: You may   not use   ChatGPT   to   directly   generate   answers   for the   coursework.   It   is important   to   think   critically   and   develop   your   own   solutions—by yourself or   through   reputable   online   resources—to   strengthen   your research   and   critical   thinking   skills.   You may,   however, use   ChatGPT   for   code   understanding   or   debugging,   as well   as   for   grammar   and   writing assistance.   If   you   do   so,   use   it responsibly,   ensuring   you   fully   understand   and   take   ownership   of   all   the   content   in   your   coursework.(A) Evaluate the Pretrained Model on Bright Sunny Test   Images   (10   marks) Complete   the   supplied   notebook   dts304_a2_part1.ipynb.   The   pretrained model   and   testing   Dataloader code   are   provided,   and   you   are   required   to   implement   both   the   testing   loop   and   the   evaluation   metrics.
-(A1) Testing Loop 
-.               Implement   the   testing   loop to   generate   predictions   for   the   test   images using   the   pretrained   model.
-.               Ensure   the   model   is   in   evaluation   mode   (model.eval())   and   use   torch.no_grad()   to   optimize   performance   and   accuracy.
-(A2) Accuracy Metrics 
-1.             Within the testing loop, calculate   global   image   accuracy   and   per-class   accuracy   for   each image,   as   well   as   for the   overall   dataset.  
-.            Global   Image   Accuracy
-.             Defined   as   the   percentage   of correctly   classified pixels   per   image.
-.             The   overall   dataset   global image   accuracy   is the   average of   the   global accuracies   across   all   images.  
-.            Per-Class   Accuracy   (IOU)
-.             Use Intersection-over-Union (IOU)   for each   of   the    14 categories.
-.             Compute   mean-IOU by   averaging   across the    14   categories.
-.             If a   category   does   not   appear   in   the   ground   truth   or   prediction,   assign   NaN   and   use   np. nanmean   for   the   mean-IOU   calculation.
-.             The   overall   dataset per-class IOU   is   obtained   by   averaging   the   per-class   IOU   scores   for   each   category   across   all   images.
-2.             Calculate the   overall   dataset global image accuracy   and the   overall   dataset   per-class   IOU scores. Note   any   significant   variations   in   the   IOU   scores   across   different   classes   and   discuss   potential   reasons   for   these   differences. 
-(A3)   Rank the   images based   on   accuracy   and   IoU   scores,   then   select   a   few   examples   where   the   model   performs   exceptionally   well   and   others   where   it   struggles.   Use   these   selections   to   illustrate   the strengths   and   limitations   of   your   street-view   segmentation   approach.   For   example,   the   model   might   accurately   segment   large,   well-lit   vehicles   but   struggle   with   small   or   distant   pedestrians,   poorly illuminated regions,   or   overlapping   objects.   In   each   case,   explain   why   these   challenges   arise   (e.g., limited pixel   information,   lighting   variations,   or   complex   backgrounds),   and use your   chosen   images   to   demonstrate   these   issues.
-B) Fine-Tune the Pretrained Model on the Cloudy Dataset   (30   marks)Finish   the   supplied   notebook   dts304_a2_part2.ipynb.   The   pretrained model   and   testing   data   loader   code      for the   cloudy   dataset   are   provided.   You   will   evaluate   the   model’s   current performance,   implement   fine-   tuning   using   various   loss   functions,   and   then   re-evaluate   and   analyse   the   results.
-(B1) Evaluate   Cloudy Dataset   Performance. Use the   code   from Part   1   (or   a   similar   approach)   to
-evaluate   the   model’s performance   on   the   cloudy   dataset   by   calculating   Dice   and   accuracy   (or   other
-relevant metrics).   Since   cloudy   conditions   typically   present   additional   challenges, you   may   observe   a
-decrease   in   segmentation   quality   compared to   t代 写DTS304TC Machine Learning Assessment Task 2R
-代做程序编程语言he   sunny   scenes   tested   in   Part    1.   This   lower performance   highlights   the   need   for   further   enhancements—such   as model   finetuning—to   improve   the   model’s
-robustness   under varying   weather   conditions.
-(B2) Fine-Tuning 
-1.          Adapt   Training Notebook:   Modify the   notebook to   fine-tune   the   model   on   the   cloudy dataset.
-2.          Loss Functions:   Experiment with   different   loss   functions   (e.g.,   Dice,   CE,   Dice   + CE)
-during   the   finetuning   and   analyse   their   impact   on   performance.
-3.          Additional   Training   Technique:   Implement   at   least   one   additional technique   of   your
-choice   (e.g.,   data   augmentations,   alternative   optimizers   with   momentum,   learning-rate   scheduling,   or   selective   layer   fine-tuning).
-4.          Training Process Monitoring.   Plot   and   compare training   vs.   validation   loss to   track
-improvements.   Include   at   least   one   plot   in   your   assessment   worksheet   to   demonstrate   how   you   selected   the   best   fine-tuned model.
-(B3) Results and   Analysis 
-1.          Loss Function   Insights:   Discuss the   theoretical/algorithm   properties   of   Dice   and   Cross-Entropy   (CE)   losses,   including   why their   combination may   offer unique   advantages   (e.g.,   gradient   considerations).   Compare   these   theoretical   insights   to   your   empirical   findings by   reporting   accuracy   and   IOU   scores   for   each   loss   configuration—Dice-only,   CE-only,   and Dice   +   CE.
-2.          Enhancements    Experiments:   Summarize   the   additional technique(s) you   employed—
-such   as   new   augmentations,   different   optimizers,   or   layer-wise   training—by   presenting   both   theoretical/algorithmic rationale   and   the   observed   experimental   outcomes.
-3.          Re-Evaluation:   After   selecting the most   effective   loss   function   and training
-enhancements,   re-test   your best   fine-tuned   model   using   the   same   procedure   as   the   initial   cloudy   dataset   evaluation.   Present   global   image   accuracy   and per-class   IOU   results   and      compare   them   against   the   baseline   to   highlight   any   performance   gains.
-C) Retrain From Scratch on daytime images  Enhance   Small-Object   Segmentation (35 Marks) 
-You   are provided with   the notebook   dts304_a2_part3.ipynb, which   you   will   use   to   train   a   segmentation   model   on   daytime   images. Your primary   objective   is to   improve   segmentation   accuracy   for   small objects—specifically   cars, pedestrians,   and lane-markings—while maintaining   or   improving   overall   performance   on   other   classes.
-(C1) Small-Object Challenge Evaluation (Cars, Pedestrians, Lane-Markings) 
-1.          Why   small   objects   are   difficult:   Distant   cars   and pedestrians   often   occupy   only   a   few pixels,
-leading   to   lower   accuracy   or   missed   detections.   Lane   markings   can   be   thin   and   fragmented,   causing   false   negatives   and reduced   IoU.
-2.          You   are   given   a   function   called   compute_object_level_stats_percentile   that:
-.          Splits   objects   into   “small”   or   “large”   based   on   a   threshold   (e.g.,   number   of   pixels)   for   each   category.
-.          Computes   precision,   recall,   and   F1-score   for   each   category   (small   vs.   large   objects).   Use   this   function   to   analyse how   well the   model   segments   small vs.   large   cars, pedestrians,   and   lane   markings.
-3.         Tasks:
-.          Calculate   Small/Large   Object Metrics:   Run   compute_object_level_stats_percentile   for   car, lane-mark,   and pedestrian classes.
-.          Compare Precision, Recall, F1:   Compare small-object   metrics with   large-object   metrics to   validate   that   segmentation   of small   objects   is   indeed   a   challenge   for   the         car,   lane-marker,   and pedestrian   classes.
-.          Provide Visual   Examples:   Show   at   least   five   images with   ground-truth
-segmentations   vs.   model   prediction   results   highlighting   missed   or partially   segmented   small   objects.
-(C2) Strategies to Improve Small-Object Segmentation 
-After   identifying   weaknesses   in   small-object   segmentation,   choose   at   least   one   of   the   following   strategies   (implementing two strategies may yield higher marks):
-1.         Combine Semantic Segmentation with Object Detection
-.          Use   an   object   detector   to   first   locate   small   objects   (cars/pedestrians),   then   apply   a   segmentation   network   to   those   regions.
-.             Or   run   a   segmentation   model   and   a   detection   model   in parallel,   fusing   their   outputs   for   improved   small-object   accuracy.
-.          You   may   use   a   pre-trained   object   detection   model   downloaded   from   the   internet   to   detect   cars   and pedestrians.   If   you   choose   this   method,   it   is   acceptable   to   omit
-experiments   for   the   'lane-marker'   class   if   no   suitable   object   detection   model   is   available   for   it.
-2.         Custom Data Augmentation
-.          Example:   Randomly   zoom   in   on   regions   containing   small   objects,   increasing   their   resolution   during   training.
-.          Alternatively,   duplicate   or   scale   small   objects   synthetically   to   increase   their   representation   in   the   training   set.
-3.         Pixel Weighting Map
-.          Assign   higher   loss   weights   to   pixels   belonging   to   small   objects
-.          Ensures   the   model   pays   more   attention   to   the   pixels   of small   objects   but   requires   careful   tuning   to   avoid   overfitting.
-4.         Multi-Scale / Pyramid Architectures
-.          Incorporate   modules   like   ASPP   (Atrous   Spatial   Pyramid   Pooling)   to   capture   features   at   multiple   scales.
-.          Helps   detect   smaller   objects   without   losing   overall   context.
-5.         Other approaches
-.          You   can   select   other   approaches   as   you   wish   (for   example,   different   loss   function).   .          However,   if   your   approach   is   overly   simplistic   or   only   involves   straightforward
-parameter   tuning   (e.g.,   adjusting   image   resolution,   learning   rate,   or   network   parameters),   it   will   not   be   awarded   high   marks.Modify   or   create   a new   training   loop   in   dts304_a2_part3.ipynb   to   include   your   chosen   technique(s).      Clearly   mark   or   comment   your   changes.   Provide   all   source   code   in   your   submission   files   and briefly   mention   modifications   in your   assessment   worksheet.
-(C3) Results  Analysis 
-1.         Post-Training Evaluation
-.          Recompute   overall   metrics   (global   accuracy,   mean   IoU)   as   you   did   for   the   original   model.
-.          Use   compute_object_level_stats_percentile   again   to   see   how   your   improvements
-affect   small-object metrics   for   cars,   pedestrians,   and   lane-markings.
-.          Compare   (precision_small,   recall_small,   F1_small)   before   and   after   your   changes.
-2.         Highlight Gains
-.          Discuss   what   strategies   (1   or   2   strategies)   have   you   made   to   improve   small   object   segmentation   and   explain   their   algorithm   principles.
-.          If   you   employed   multiple   improvements   or   strategies,   clearly   explain   how   each
-individual   approach/strategy   contributed   to   the   enhancement   of small-object
-segmentation   based   on   experimental   evaluation   results   (for   example,   the   small-object   metrics, mean   IOU   or   global   accuracy)   and/or   your   analysis.
-.          Note   any   trade-offs,   such   as   slightly   lower   performance   on   large   objects   or   other   classes.
-3.         Qualitative Examples
-.             Show   side-by-side   images   (ground   truth   vs.   predicted   segmentation)   demonstrating   improvements   in   small-object   detection.
-.          Point   out   any   remaining   challenges   (extremely   tiny   objects,   occlusions,   etc.).
-D) Coursework Reflections (15 Marks) 
+Question 1: Coding Exercise - Disease Classification with Machine Learning (80 Marks) In    this    coding   assessment,   you      are   presented   with   the      challenge   of    analyzing   a   dataset   that      contains   patient   demographics   and   health   indicators   to   predict   disease   classifications.   This   entails   solving   a   multi-   class   classification   problem   incorporating   both   categorical   and   numerical   attributes.Your    initial    task    is    to   demonstrate   proficiency   in   encoding   categorical   features   and   imputing   missing   values   to   prepare   the   dataset   for   training   a   basic   classifier.   Beyond   these   foundational   techniques,   you   are   invited   to showcase your advanced skills. This may include hyperparameter    tuning    using    sophisticated   algorithms   like   the   PBT   or   Bayesian   Optimization.   You   are   also   encouraged   to   implement   strategies   for   outlier   detection   and      handling,   model   ensembling,   and   addressing   class   imbalance   to   enhance      your   model's performance.Moreover, an   external      test set without ground   truth labels has   been   provided.   Your      classifier's   performance   will   be    evaluated   based   on   this    set,   underscoring   the   importance    of   building a   model   with   strong   generalization   capabilities.The      competencies you develop during this practical project are not only essential for successfully completing   this   assessment but   are   also   highly   valuable   for   your   future   pursuits   in   the   field   of data   science.   Throughout   this   project,   you   are   encouraged   to   utilize   code   that   was   covered   during   our   Lab   sessions,   as      well   as   other   online   resources   for   assistance.   Please   ensure   that   you   provide   proper   citations   and   links   to      any   external   resources   you   employ   in   your   work.
+Important: You may   not use   ChatGPT   to   directly   generate   answers   for the   coursework.   It   is   important to   think   critically   and   develop   your   own   solutions—by yourself or   through reputable   online resources—to   strengthen   your research   and   critical   thinking   skills.   You may, however, use   ChatGPT for code understanding or debugging, as well as for grammar and writing assistance. If you do so, use it responsibly, ensuring you fully understand and take ownership of all the content in your coursework. 
+(A) XGBoost and Hyperparameter Tweaking (28 marks) 
+(A1) Basic Feature Preprocessing 
+. Dataset Loading and Inspection: Load the   provided   training   dataset   from   the   CSV   file   into   a   panda   DataFrame   (or   a   similar   structure).
+. Handling Categorical Features: Identify   any   categorical   features.   Encode these   features appropriately   (e.g.,   one-hot   encoding   or   label   encoding).   Justify   your   choice   of   encoding   method.
+. Handling Missing Values: Identify   and   handle   missing   values   in   the   dataset.   Provide   a   concise   explanation   of   your   chosen   strategy   (e.g.,   imputation, removal   of   rows,   etc.).   You   can use   a simple   imputation   method   (mean/mode   imputation)   at   this   point.
+. Dataset Splitting: Randomly   split the   data   into training,   validation   and   internal   test   subsets   for model   tuning. Note   that this   internal test   set   must   be   kept   separated   for internal   evaluation.
+Important: The   same preprocessing   steps   (encoding, missing-value   handling,   etc.)   must be   consistently   applied to   all   data   subsets,   including the   external   test   set provided   later.
+(A2) XGBoost Tweaking and Training 
+1.         Hyperparameter Tuning Approach
+o    Utilize   advanced hyperparameter   tuning   strategy   such   as   Bayesian   Optimization,   Population-Based   Training   (PBT),   or   a   similarly   sophisticated   method.
+o      Clearly   describe   the   search   space   (i.e.,   which   hyperparameters   you   chose   to   tune   and   the   range   of   values   for   each).
+o    Ensure   hyperparameter   tuning   is   performed   using   the   training   and   validation   sets—not   on   your   internal   test   set.
+2.         XGBoost Model Training
+o    Use   the   chosen   hyperparameter-tuning   technique   to   fit   the   XGBoost   model.
+o      Log   or   record   key   information   about   the   tuning   process   (e.g., best   parameters   found,   final   objective   scores).
+(A3) Evaluation and Reflection 
+1.          Performance   on   Internal Test   Set. After   finalizing   your   hyperparameters,   retrain   the   model   on
+the   combined   (training   + validation)   set.   Then   evaluate   on   the   internal   test   set.   Report   at   least   two metrics:   accuracy and macro-averaged F1 score.
+2.          Explanation   of Tuning Principles. Briefly   explain   how your   chosen   advanced tuning   approach
+works   (e.g.,   how   Bayesian   optimization   narrows   search   space,   or how   PBT   explores   hyperparameter   configurations,   etc.).
+3.       Demonstrating   the   Importance   of   Hyperparameter   Tuning
+o    Provide   a   simple   comparison   of   performance   results   between:   A   default   XGBoost   model
+(no   advanced   tuning   or very   simple   tuning)   and   your   advanced   tuning   approach
+o      Discuss   any   observed   improvements   or unexpected   findings.
+(B) Additional Tweaking (20 marks) 
+(B1) Additional Tweaking Implementation 
+You   are   encouraged to   apply   at   least   two   extra   strategies to boost performance.   Example   strategies   may   include   (but   are   not   limited   to):
+.               Using   alternative preprocessing   methods   (e.g.,   advanced missing value   imputation   strategy,   outlier   treatment,   advanced   feature   engineering)
+.               Exploring   class imbalance   handling   (e.g.,   SMOTE,   class-weight   adjustments)
+.               Exploring   alternative   classifiers   (e.g.,   random   forest   or   other   classifiers)
+.               Building   ensembles   of   models   (e.g.,   combining XGBoost with   other   classifiers)
+.                Any other innovative   approach relevant to   your   dataset
+Please   clearly   document   each   additional   strategy   you   implement   and   show   enough   code/comments   so we   can   understand how   you   incorporated   it   into   your pipeline.
+(B2) Additional Tweaking Evaluation and Reflection 
+1.         Motivation and Principles
+o    For   each   strategy,   explain   why   you   believed   it   might   improve   performance   (e.g.,   addressing   outliers,   class   imbalance,   or   feature   interaction代 写DTS304TC Machine Learning Assessment Task 1Java
+代做程序编程语言s).
+o    Elaborate   on   the   theoretical   or   conceptual   principle behind   your   chosen   extra   strategies   (e.g.,   how   does   SMOTE   handle rare   classes,   why   does   certain   feature   engineering help,   etc.).
+2.         Results Reporting   and Analysis
+o      Provide   results   (accuracy,   F1,   or   other   metrics)   indicating   whether   the   strategy   helped,   did   not help,   or had neutral   impact.   Present   all relevant   performance   metrics   in   a concise   table.
+o      Offer possible   explanations   for   why   certain tweaks worked   or   did   not   work.
+o      Explain   your   other   efforts   (whether   they   are   successful   or   not)   for   improving   the   classification performance.
+(C) External Benchmarking and Final Result Reporting (12 marks) 
+(C1) Final Result Reporting 
+1.         Per-Class Precision, Recall,   Specificity, and F1. On   your   internal   test   set,   compute   and
+display:   Precision,   Recall,   F1   score   for   each   class. A   confusion matrix to   visualize performance.
+2.         Feature Importance Analysis.
+o      For   the   same   model,   extract   feature-importance   scores   if supported   by your   chosen   classifier   (e.g., XGBoost).
+o    Identify   the   top   three   most important   features   for   your   prediction   task.
+o      If   your best   model   does not   natively   support   feature   importance,   you   may use   a   surrogate   technique   (e.g.,   SHAP,   LIME)   or   a   secondary model   for   demonstration.
+(C2) External Benchmarking 
+1.         Retraining on the Full Dataset
+o    Retrain your   best-performing   classifier   on   the   entire   dataset   (i.e.,   training   +   validation   +   internal   test   sets).
+o    Apply your   final preprocessing and   hyperparameter   configurations   consistently.
+2.         Predicting on the External   Test   Set
+o    Predict   on   dts304tc_a1_disease_dataset_external_test.csv,   which   does   not   include   ground   truth   labels.
+o      Output probabilistic   scores   or predicted   labels   in   a   CSV named   external_test_results_[your_student_id].csv,   with:
+.                First   column:   “Patient_ID”
+.                Second   column:   Your   predicted   class   labels   (integers)
+3.          Ranking   and Feedback. Your   submission   will   be   evaluated   against   an   external   “ground   truth” for   benchmarking.
+(D) Challenges and Reflections (10 marks) 
 .             Write   a   brief   reflection   highlighting   unique   or   interesting   algorithms   or   strategies   you   implemented   in   the   coursework.
 .             Reflect   on   the   challenges   you   personally   faced   during   the   coursework,   describing   the   efforts   you   made   to   overcome   them   and   the   key   lessons   you   learned.
 .             Based   on   your   reflections,   discuss   potential   future   work   that   could   further   enhance   semantic   segmentation   in   street-view   applications.
-E) Coding Quality, Worksheet Quality and Adherence to Submission   Guidelines (10 Marks) 
-.             Ensure   your   code   is   clear,   easy   to   understand,   and   includes   well-written   comments   to   explain   its   functionality.
-.             Follow   the   worksheet   template,   formatting   guidelines,   and   all   prescribed   requirements   for   the   submission.
-.             Write   in   clear   and   proper   English,   keeping   your   answers   concise   and   within   the   specified word   limit.   Pay   close   attention   to   maintaining   excellent   formatting   throughout.
+(E) Coding Quality, Answer Sheet Quality, and Submission Guidelines (10 marks) 
+.               Submit   your   completed   worksheet   in   PDF   format.
+.               Submit   your   Jupyter Notebook   in   .ipynb   format.   Your notebook must be   well-organized   and   include   clear   commentary   and   clean   code   practices.   All   code   execution   results   must   be   clearly   visible   and    match    the    results    provided    in   the   worksheet.    Additionally,   the   notebook      should   be      fully   reproducible—running it from start to   finish should not   produce   any   errors.
+If you   have   written   supplementary   code   that   is   not   contained   within   the   Jupyter   notebook,   you   must   submit   that   as   well   to   guarantee   that   your   Jupyter   notebook   functions   correctly.
+.             Submit   the   results   of   your   external   test   as   a   file   named   external_test_[your_student_id].csv.   This   CSV   file   must   be   correctly   formatted:   the   first   column   must   contain   patient   ID                            s,                and                   the                second   column   must   list   your   predicted   classification   labels.   Any   deviation   from   this   format   may   result   in   the   file   being   processable   by   our   grading   software,   and   therefore   unable   to   be   scored.
+Project Material Access Instructions 
+To   obtain   the   complete   set   of   materials   for   our   project,   including   the   dataset,   code,   and   Jupyter   notebook   template   files,   please   use   the   links   provided below:
+(OneDrive   Link): https://1drv.ms/f/s!AoRfWDkanfAYoo4P7hiPebYwCnSlag?e=Jcg0WD
+When prompted,   use   the   following password to   unlock the   zip   file:   DTS304TC   (please   note   that   it   is   case-   sensitive   and   should be   entered   in   all   capital   letters).
+Please   note   that   the   primary   library   dependencies   for this   project   include   pandas,   scikit-learn,   xgboost,   and   the   ray   library   with   the   tune   module   enabled   (ray[tune]).
+Question 2:       Analytical Questions (20 marks) 
+Students   are   required   not   to   use   AI   models,   such   as   ChatGPT,   for   assistance   with   this   question.   You should give clear calculation steps and   explain the   relevant   concepts   using   your   own words.
+(a)                      AdaBoost Algorithm (10 Marks) 
+Consider   the   process   of   creating   an   ensemble   of   decision   stumps,   referred   to   as   Gm   ,   through   the   standard   AdaBoost   method.
+
+
+The   diagram   above   shows   several   two-dimensional   labeled points   along   with   the   initial   decision   stump   we've   chosen.   This   stump   gives   out binary   values   and makes   its   decisions   based   on   a   single   variable   (the   cut-off).   In   the   diagram,   there's   a   tiny   arrow perpendicular to   the   classifier's   boundary   that   shows   where         the   classifier predicts   a   +1.   Initially,   every point   has   the   same   weight.
+1.          Identify   all   the points   in   the   above   diagram   that   will   have   their   weights   increased   after   adding   the
+initial   decision   stump   (adjustments   to   AdaBoost   sample   weights   after   the   initial   stump   is   used)   (2   marks)
+2.          On   the   same   diagram,   draw   another   decision   stump   that   could   be   considered   in   the next   round   of
+boosting.   Include   the   boundary   where   it   makes   its   decision   and   indicate   which   side   will   result   in   a   +1   prediction.   (2 marks)3.          Will   the   second   basic   classifier   likely   get   a   larger   importance   score   in   the   group   compared   to   the   first
+one?   To put   it   another way, will   α2      >      α1   ?      Just   a   short   explanation   is   needed   (Calculations   are   not   required).   (3 marks)4.          Suppose   you   have   trained   two   models   on   the   same   set   of data:   one   with   AdaBoost   and   another   with   a
+Random   Forest   approach.   The   AdaBoost   model   does   better   on   the   training   data   than   the   Random
+Forest   model.   However,   when   tested   on   new,   unseen   data,   the   Random   Forest   model   performs   better.   What   could   explain   this   difference   in performance?   What   can   be   done   to make   the   AdaBoost model         perform. better?   (3   marks)
+(b) K-Means and GMM Clustering (10 marks) 
+1.          Reflect   on   the   provided   data   for training   and   analyze the   outcomes   of K-Means   and   GMM
+techniques.   Can   we   anticipate   identical   centroids   from   these   clustering   methods   if   the   number   of   clusters   is   2   or   3?   Please   state   your   reasoning.   (4   marks)
+
+2.          Determine   which   of   the   given   cluster   assignments   could be   a   result   of applying   K-means   clustering,
+and   which   could   originate   from   GMM   clustering,   providing   detailed   explanations   for   your reasoning.   (6   marks)  
+
+
+
 
 
 
